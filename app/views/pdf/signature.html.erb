@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  window.mifiel=window.mifiel||[],function(){"use strict";for(var e=["widget"],i=function(e){return function(){window.mifiel.push([e].concat(Array.prototype.slice.call(arguments,0)))}},t=0;t<e.length;t++){var n=e[t];window.mifiel[n]||(window.mifiel[n]=i(n))}if(!document.getElementById("mifiel-js")){var r=document.createElement("script"),o=document.getElementsByTagName("script")[0];r.type="text/javascript",r.id="mifiel-js",r.async=!0,r.src="https://sandbox.mifiel.com/sign-widget-v1.0.0.js",o.parentNode.insertBefore(r,o)}}();
+</script>
+
+<script type="text/javascript">
+  window.mifiel.widget({
+    widgetId: "<%= @document.widget_id %>",
+    appendTo: 'widget-integration',
+    successBtnText: 'Proceed to next step',
+    pdf: "<%= @document.pdf %>"
+  });
+</script>
+
+
+<div id="widget-integration">
+</div>

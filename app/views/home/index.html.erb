@@ -1,0 +1,67 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Firma tu documento</h3>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 well well-sm">
+        <%= render partial: 'home/billing' %>
+      </div>
+    </div>
+    <%= form_tag pdf_index_path, method: :post, class: 'form-horizontal' do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+          <h4>Firmante 1: </h4>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][name]', '', class: 'form-control', placeholder: 'Nombre', required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][email]', '', class: 'form-control', placeholder: 'Email', required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">RFC</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][tax_id]', '', class: 'form-control', placeholder: 'RFC', required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+          <h4>Firmante 2: </h4>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][name]', '', class: 'form-control', placeholder: 'Nombre', required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][email]', '', class: 'form-control', placeholder: 'Email', required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-2 control-label">RFC</label>
+            <div class="col-sm-10">
+              <%= text_field_tag 'document[users_attributes][][tax_id]', '', class: 'form-control', placeholder: 'RFC', required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+
+          <%= submit_tag 'Create PDF', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

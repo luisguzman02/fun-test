@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330230323) do
+ActiveRecord::Schema.define(version: 20170331044641) do
 
   create_table "documents", force: :cascade do |t|
     t.text     "widget_id"
@@ -18,6 +18,21 @@ ActiveRecord::Schema.define(version: 20170330230323) do
     t.datetime "updated_at", null: false
     t.text     "hsh"
     t.text     "pdf"
+  end
+
+  create_table "signatures", force: :cascade do |t|
+    t.integer "document_id"
+    t.integer "user_id"
+    t.index ["document_id"], name: "index_signatures_on_document_id"
+    t.index ["user_id"], name: "index_signatures_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "tax_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
