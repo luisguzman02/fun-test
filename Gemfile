@@ -51,3 +51,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#new gems
+gem 'mifiel', git: 'https://github.com/Mifiel/ruby-api-client.git'
+gem 'prawn'
