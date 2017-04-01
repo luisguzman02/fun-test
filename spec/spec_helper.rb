@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'webmock/rspec'
+require './spec/support/fake_mifiel'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -44,7 +45,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    stub_request(:any, /sandbox.mifiel.com/).to_rack(FakeMifiel)
+    stub_request(:any, /mifiel.com/).to_rack(FakeMifiel)
   end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will

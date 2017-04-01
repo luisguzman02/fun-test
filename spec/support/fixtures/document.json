@@ -4,8 +4,9 @@
   "file_file_name": "test-pdf.pdf",
   "signed_by_all": true,
   "signed": false,
-  "signed_at": nil,
+  "signed_at": "",
   "status": [1, "Firmado"],
+  "widget_id": "29f3cb01-744d-4eae-8718-213aec8a1678",
   "owner": {
     "email": "signer1@email.com",
     "name": "Jorge Morales"

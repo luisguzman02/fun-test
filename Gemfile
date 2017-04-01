@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'webmock'
   gem 'sqlite3'
+  gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+  gem 'rails-controller-testing'
 end
 
 group :development do
