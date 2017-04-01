@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :pdf, only: :create, controller: :pdf do
     member do
       get :signature
+      get :download
     end
   end
 
