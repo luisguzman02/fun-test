@@ -1,6 +1,10 @@
 class HooksController < ApplicationController
+  skip_before_filter :verify_authenticity_token
 
   def mifiel
-    Rails.logger.info params
+    hook = Hooks::Mifiel.new(params)
+    hook.fetch_files!
+    hook.merge_files!
+    head hook.head
   end
 end
