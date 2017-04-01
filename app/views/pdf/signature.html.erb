@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  window.mifiel=window.mifiel||[],function(){"use strict";for(var e=["widget"],i=function(e){return function(){window.mifiel.push([e].concat(Array.prototype.slice.call(arguments,0)))}},t=0;t<e.length;t++){var n=e[t];window.mifiel[n]||(window.mifiel[n]=i(n))}if(!document.getElementById("mifiel-js")){var r=document.createElement("script"),o=document.getElementsByTagName("script")[0];r.type="text/javascript",r.id="mifiel-js",r.async=!0,r.src="https://sandbox.mifiel.com/sign-widget-v1.0.0.js",o.parentNode.insertBefore(r,o)}}();
+</script>
+
+<script type="text/javascript">
+  window.mifiel.widget({
+    widgetId: "<%= @document.widget_id %>",
+    appendTo: 'widget-integration',
+    successBtnText: 'Proceed to next step',
+    pdf: "<%= @document.pdf %>"
+  });
+</script>
+
+
+<script type="text/javascript">
+  window.addEventListener('message', function (e) {
+    console.log(e);
+    // accept messages from known hosts only
+    // change to https://stageex.mifiel.com if necessary
+    // if (e.origin !== 'https://www.mifiel.com') {
+    //   return;
+    // }
+    // We will always send an object
+    if (typeof e.data !== 'object') {
+      return;
+    }
+    // document signed succesfully
+    if (e.data.eventType === 'mifiel.widget.success') {
+      var data = e.data,
+          doc = data.document,
+          signature = data.signature;
+      // doc.original_hash;
+      // doc.file_signed;
+      window.top.location.reload();
+    }
+    // Event errors
+    if (e.data.eventType === 'mifiel.widget.error') {
+      var error = e.data.error;
+      // error.code => 1001
+      // error.message => 'Invalid PDF, the pdf param has no data'
+    }
+  }, false);
+</script>
+
+<div id="widget-integration">
+</div>

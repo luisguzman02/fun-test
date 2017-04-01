@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h4>Aqui puedes descargar tu documento firmado</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% if files_received?(@document) %>
+    <div class="col-md-5 col-md-offset-1">
+      <%= link_to 'Descargar PDF firmado', download_pdf_path(@document, format: :pdf), class: 'btn btn-primary' %>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <%= link_to 'Descargar XML', download_pdf_path(@document, format: :xml), class: 'btn btn-primary' %>
+    </div>
+  <% else %>
+    <div class="col-md-10 col-md-offset-1">
+      <p>
+        <span class="label label-warning">
+          Las firmas del documento (<%= @document.id %>) estan siendo procesadas
+        </span>
+      </p>
+      <br/>
+      <br/>
+      <br/>
+      <%= link_to 'Firmar un nuevo documento', root_path, class: 'btn btn-info' %>
+    </div>
+  <% end %>
+</div>
