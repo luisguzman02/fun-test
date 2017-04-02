@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331044641) do
+ActiveRecord::Schema.define(version: 20170402053440) do
 
   create_table "documents", force: :cascade do |t|
     t.text     "widget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "hsh"
     t.text     "pdf"
+    t.text     "document_id"
   end
 
   create_table "signatures", force: :cascade do |t|

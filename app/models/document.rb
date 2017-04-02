@@ -25,6 +25,7 @@ class Document < ApplicationRecord
       signatories: users_params
     )
     self.widget_id = mf_document.widget_id
+    self.document_id = mf_document.id
   end
 
   def users_params

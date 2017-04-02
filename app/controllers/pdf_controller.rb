@@ -34,7 +34,7 @@ class PdfController < ApplicationController
   end
 
   def check_signatures
-    mf_document = Mifiel::Document.find(@document.widget_id)
+    mf_document = Mifiel::Document.find(@document.document_id)
     mf_document.signed || !mf_document.status.first.zero?
   end
 end

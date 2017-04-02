@@ -12,9 +12,9 @@ module Hooks
     end
 
     def fetch_files!
-      self.document = Document.find_by_widget_id(response.fetch(:id))
+      self.document = Document.find_by_document_id(response.fetch(:id))
       # TODO add requests to background jobs
-      mf_document = ::Mifiel::Document.find(document.widget_id)
+      mf_document = ::Mifiel::Document.find(document.document_id)
       mf_document.save_xml(document.xml_path)
       mf_document.save_file_signed(document.pdf_path)
     end
