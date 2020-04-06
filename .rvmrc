@@ -1,2 +1,2 @@
-rvm use --create 2.3.0@mifiel-test
+rvm use --create 2.4.9@mifiel-test
 
